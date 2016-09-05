@@ -6,7 +6,7 @@ javascript : (function () {
     bklScript.type = "text/javascript";
     bklScript.id ="randibkmlt";
     //bklScript.src = "https://raw.githubusercontent.com/irota/randikepek/master/randikepek.js";
-    bklScript.src = "https://raw.githubusercontent.com/irota/randikepek/master/randikepek.js";
+    bklScript.src = "https://raw.githubusercontent.com/irota/randikepek/master/randikepek.min.js";
     head.appendChild(bklScript);
     
   } else {
