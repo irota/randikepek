@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Randivonal bookmarklet</title>
+  <style>
+    body{
+      font-size:30px;
+      font-family: sans-serif;
+    }
+    
+    .main{display:flex; flex-flow: column; align-items:center; justify-content:center; height:100vh;}
+    a{text-decoration:none; padding:10px 20px; background: rgb(100,100,100); border:1px solid rgb(50,50,50); color:#aaa;display:inline-block;border-radius:3px;}
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="bklet"><a href='javascript:(function(){var head=document.getElementsByTagName("head")[0];if(!document.getElementById("randibkmlt")){var bklScript=document.createElement("script");bklScript.type="text/javascript";bklScript.id="randibkmlt";bklScript.src="https://raw.githubusercontent.com/irota/randikepek/master/randikepek.min.js";head.appendChild(bklScript);}else{jQuery(".photooverlay").attr("style","{display:flex !important;}");}})();'>Randiképek</a>
+    </div>
+    <div><sup>Húzd a fenti linket a könyvjelzők közé</sup></div>
+  </div>
+  
+</body>
+</html>
