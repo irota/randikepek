@@ -59,7 +59,10 @@
     
     $(".closebtn").click("on", function(){
       nanoHide();
-    });    
+    }); 
+    $(".photooverlay").click("on", function(){
+      nanoHide();
+    });
 
   };
   
