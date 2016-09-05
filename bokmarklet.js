@@ -1,7 +1,17 @@
 javascript : (function () {
 	var head = document.getElementsByTagName("head")[0];
-	var bklScript = document.createElement("script");
-	bklScript.type = "text/javascript";
-	bklScript.src = "";
-	head.appendChild(bklScript);
+  
+  if(!document.getElementById("randibkmlt")){
+    var bklScript = document.createElement("script");
+    bklScript.type = "text/javascript";
+    bklScript.id ="randibkmlt";
+    //bklScript.src = "https://raw.githubusercontent.com/irota/randikepek/master/randikepek.js";
+    bklScript.src = "https://raw.githubusercontent.com/irota/randikepek/master/randikepek.js";
+    head.appendChild(bklScript);
+    
+  } else {
+     $(".photooverlay").attr("style","{display:flex !important;}");
+    
+  }
+  
 })();

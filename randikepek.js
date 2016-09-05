@@ -6,27 +6,21 @@
       return true;
     }
     
-    var nanocontainer = document.getElementById("nano-gallery");
+    var nanocontainer,
     
-    if(!nanocontainer){
-      
-    } else {
-      // nanogallery bekapcsolása
-       nanoshow();
-    }
-
+  
     
-    
-    var nanoShow = function() {
+    nanoShow = function() {
       $(".photooverlay").attr("style","{display:flex !important;}");
 
     },
+    
     nanoHide = function(){
-      $(".photooverlay").attr("style","{display:none !important;}");
+      $(".photooverlay").attr("style","display:none !important;");
     },
 
 
-    nanoBuild = function(gridZindex) {
+    nanoBuild = function() {
       var parr = document.getElementById("PhotoArray"),
           photos = Array(),
           nanohtml;
@@ -37,31 +31,46 @@
         photos[i] = parr[i].split("|");
       }    
       
-      nanohtml="<div class=\"photooverlay\"><div class=\"photocontainer\"><div class=\"closebtn\"><a href=\"#\">X</a></div><div class=\"thumbcontainer\"><div id=\"nano-gallery\">";
+      nanohtml="<div class=\"photooverlay\"><div class=\"photocontainer\"><div class=\"closebtn\"><a href=\"#\">x</a></div><div class=\"thumbcontainer\"><div id=\"nano-gallery\">";
       
       for(i = 0; i < l; i++){
-        nonohtml += "<a href=\"" + photos[i][2] + "\" data-ngthumb=\"" + photos[i][1] + "\">" + i+1 + "</a>";
+        nanohtml += "<a href=\"" + photos[i][2] + "\" data-ngthumb=\"" + photos[i][1] + "\">" + eval(i+1) + "</a>";
       }
       
       nanohtml += "</div></div></div></div>";
       $("body").append(nanohtml);
 
-    };
+    },
     
-    $(".closebtn a").click("on", funcion(){
+    nanocontainer = document.getElementById("nano-gallery");
+    
+    if(!nanocontainer){
+       nanoBuild();
+       $("#nano-gallery").nanoGallery({
+          thumbnailWidth: 'auto',
+          thumbnailHeight: 110,
+          locationHash: false,
+          thumbnailHoverEffect:'borderLighter'
+        });
+    } else {
+      // nanogallery bekapcsolása
+       nanoshow();
+    }
+    
+    $(".closebtn").click("on", function(){
       nanoHide();
-    })
+    });    
 
   };
   
-  var head = document.getElementsByTagName("head")[0]
+  var head = document.getElementsByTagName("head")[0];
 
   // Load jQuery from CDN if needed
   if (!window.jQuery) {
     var jQueryScript = document.createElement("script");
     jQueryScript.type = "text/javascript";
     jQueryScript.src  = "http://code.jquery.com/jquery-1.10.0.min.js";
-    jQueryScript.onload = function() { startBookmarklet(window.jQuery); };
+    //jQueryScript.onload = ;
     head.appendChild(jQueryScript);
   } else {
    
@@ -71,10 +80,10 @@
   //load nanoGallery theme
   
   if(!document.getElementById("nanostyle")){
-    var nanostyle = document.createElement("style");
+    var nanostyle = document.createElement("link");
     
     nanostyle.type = "text/css";
-    nanostyle.src = "https://cdnjs.cloudflare.com/ajax/libs/nanogallery/5.10.3/css/nanogallery.min.css"
+    nanostyle.href = "https://cdnjs.cloudflare.com/ajax/libs/nanogallery/5.10.3/css/nanogallery.min.css"
     nanostyle.id = "nanostyle";
     nanostyle.rel = "stylesheet";
     head.appendChild(nanostyle);
@@ -89,13 +98,13 @@
     sty.type = "text/css";
     sty.rel = "stylesheet";
     sty.id = "customstyle";
-    sty.textContent = ".photooverlay{align-items: center; background: rgba(255, 0, 0, 0.18) none repeat scroll 0 0; display: flex; flex-flow: row nowrap; height: 100vh; justify-content: center; left: 0; position: absolute; top: 0; width: 100%; z-index: 1000;}"
+    sty.textContent = ".photooverlay{align-items: center; background: rgba(0, 0, 0, 0.18) none repeat scroll 0 0; display: flex; flex-flow: row nowrap; height: 100vh; justify-content: center; left: 0; position: absolute; top: 0; width: 100%; z-index: 1000;}"
     
-    + ".photocontainer{background: rgba(1, 128, 0, 0.23) none repeat scroll 0 0;  max-width: 650px; position: relative; width: 50%;}"
-    + ".closebtn{font-size: 2rem; padding: 1rem; position: absolute; right: 0; text-shadow: 0 0 2px #560303; top: 0;}"
-    + ".closebtn a{color: #810707; text-decoration: none;}"
-    + ".thumcontainer{align-items: right; display: flex; flex-flow: column nowrap; position: relative;}"
-    + ".thumbcontainer>div{width: 50%;}";
+    + ".photocontainer{background: rgba(1, 0, 0, 0.14) none repeat scroll 0 0;  max-width: 650px; position: relative; width: 80%;border-radius:5px;box-shadow:0 0 12px 1px rgba(130, 17, 17, 0.42) inset;}"
+    + ".closebtn{cursor:pointer;padding: .5rem 1rem; position: absolute; right: 0; text-shadow: 0 0 2px #560303; top: 0;z-index:1001;background:rgba(255,255,255,.64);box-shadow:0 0 1px 1px rgba(255,255,255,.69) inset;margin: 3px 3px 0 0;}"
+    + ".closebtn a{color: #810707; text-decoration: none;font-size: 1.4rem;line-height: 1.4rem;}"
+    + ".thumbcontainer{align-items: right; display: flex; flex-flow: column nowrap; position: relative;margin:10px;}"
+    + "#nano-gallery{width:88%}";
     head.appendChild(sty);
     
   } else {
@@ -105,12 +114,12 @@
   //load nanoGallery
   if(!document.getElementById("nanoscript")) {
      var nanoscript = document.createElement("script");
-     head = document.getElementById("head");
+     
      nanoscript.type = "text/javascript";
      nanoscript.id = "nanoscript";
-     nanoscript.scr = "https://cdnjs.cloudflare.com/ajax/libs/nanogallery/5.10.3/jquery.nanogallery.min.js";
-     nanoscript.onload = function(){startBookmarklet(window.jQuery)};
-     head
+     nanoscript.src = "https://cdnjs.cloudflare.com/ajax/libs/nanogallery/5.10.3/jquery.nanogallery.min.js";
+     nanoscript.onload = function() { startBookmarklet(window.jQuery); };
+     head.appendChild(nanoscript);
   } else {
      startBookmarklet(window.jQuery);
   }
