@@ -104,8 +104,8 @@
     sty.textContent = ".photooverlay{align-items: center; background: rgba(0, 0, 0, 0.18) none repeat scroll 0 0; display: flex; flex-flow: row nowrap; height: 100vh; justify-content: center; left: 0; position: absolute; top: 0; width: 100%; z-index: 1000;}"
     
     + ".photocontainer{background: rgba(1, 0, 0, 0.14) none repeat scroll 0 0;  max-width: 650px; position: relative; width: 80%;border-radius:5px;box-shadow:0 0 12px 1px rgba(130, 17, 17, 0.42) inset;}"
-    + ".closebtn{cursor:pointer;padding: .5rem 1rem; position: absolute; right: 0; text-shadow: 0 0 2px #560303; top: 0;z-index:1001;background:rgba(255,255,255,.64);box-shadow:0 0 1px 1px rgba(255,255,255,.69) inset;margin: 3px 3px 0 0;}"
-    + ".closebtn a{color: #810707; text-decoration: none;font-size: 1.4rem;line-height: 1.4rem;}"
+    + ".closebtn{cursor:pointer;padding: .5rem; position: absolute; right: 0; text-shadow: 0 0 2px #560303; top: 0;z-index:1001;background:rgba(255,255,255,1);box-shadow:0 0 1px 1px rgba(0,0,0,.89) inset;margin: 3px 3px 0 0;border-radius: 50%;}"
+    + ".closebtn a{color: #810707; text-decoration: none;font-size: 0.8rem;line-height: 1.4rem;}"
     + ".thumbcontainer{align-items: right; display: flex; flex-flow: column nowrap; position: relative;margin:10px;}"
     + "#nano-gallery{width:88%}";
     head.appendChild(sty);
