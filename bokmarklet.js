@@ -10,7 +10,7 @@ javascript : (function () {
     head.appendChild(bklScript);
     
   } else {
-     jQuery(".photooverlay").attr("style","{display:flex !important;}");
+     document.querySelector(".photooverlay").style = "display:flex !important;";
     
   }
   
