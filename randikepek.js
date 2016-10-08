@@ -34,7 +34,7 @@
       nanohtml="<div class=\"photooverlay\"><div class=\"photocontainer\"><div class=\"closebtn\"><a href=\"#\">x</a></div><div class=\"thumbcontainer\"><div id=\"nano-gallery\">";
       
       for(i = 0; i < l; i++){
-        if(photos[i][1].indexOf("kep_zar") === -1){
+        if(photos[i][1].indexOf("kep_") === -1){
           nanohtml += "<a href=\"" + photos[i][2] + "\" data-ngthumb=\"" + photos[i][1] + "\">" + eval(i+1) + "</a>";
         }
       }
