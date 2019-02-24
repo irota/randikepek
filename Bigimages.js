@@ -16,7 +16,7 @@ javascript: {
 				bgColor = "#cdcdcd";
 				btnBoxShadow = "0 5px 0 0 #aaa0a0";
 			} else {
-				initImgs
+				initImgs;
 				btnAttr = "on";
 				displayMode = "flex";
 				imgDisplay = "block";
