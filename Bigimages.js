@@ -16,9 +16,7 @@ javascript: {
 				bgColor = "#cdcdcd";
 				btnBoxShadow = "0 5px 0 0 #aaa0a0";
 			} else {
-				jQuery("img").on("mouseover", function () {
-					calcBigImg(jQuery(this));
-				});
+				initImgs
 				btnAttr = "on";
 				displayMode = "flex";
 				imgDisplay = "block";
@@ -29,6 +27,12 @@ javascript: {
 			jQuery("#imgov").css("display", imgDisplay);
 			btn.text(btnText).attr("data-open", btnAttr).css("background-color", bgColor).css("box-shadow", btnBoxShadow);
 			jQuery("#bigoverlay").css("display", displayMode);
+		}
+		
+		function initImgs(){
+			jQuery("img").on("mouseover", function () {
+				calcBigImg(jQuery(this));
+			});				
 		}
 		
 		function calcBigImg(imgElement) {
