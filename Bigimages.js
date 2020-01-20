@@ -64,7 +64,7 @@ function () {
 		event.stopPropagation();
 		
 		var bigimg = document.querySelector('#bigimg'),
-			userId = document.location.href.match(/[0-9]{7}/)[0],
+			userId = document.location.href.match(/[0-9]{6,7}/)[0],
 			photos = document.querySelectorAll('.photos .thumbnail:not(.privatePhoto)'),
 			el = document.querySelector('#bigoverlay');
 		
@@ -106,7 +106,7 @@ function () {
 		if (dataSource.search('elofizetes') > 0){
 			dataSource = getHidedUser();
 		}
-		userId = dataSource.match(/[0-9]{7}/)[0];
+		userId = dataSource.match(/[0-9]{6,7}/)[0];
 		
 		
 		var st = document.documentElement.scrollTop;
