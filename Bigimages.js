@@ -1,4 +1,4 @@
-function () {
+javascript: (function () {
 	function btnDraw() {
 		var btnAttr,
 		displayMode,
@@ -409,4 +409,4 @@ var users = [],
     el.addEventListener("click", handleBigOverlayClick);	
 	
 	btnDraw();
-}();
+})();
