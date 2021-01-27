@@ -15,7 +15,11 @@
 </head>
 <body>
   <div class="main">
-    <div class="bklet"><a href='javascript:(function(){var head=document.getElementsByTagName("head")[0];if(!document.getElementById("randibkmlt")){var bklScript=document.createElement("script");bklScript.type="text/javascript";bklScript.id="randibkmlt";bklScript.src="https://irota.github.io/randikepek/randikepek.js";head.appendChild(bklScript);}else{document.querySelector(".photooverlay").style="display:flex !important;";}})();'>Randiképek</a>
+    <!--<div class="bklet">
+      <a href='javascript:(function(){var head=document.getElementsByTagName("head")[0];if(!document.getElementById("randibkmlt")){var bklScript=document.createElement("script");bklScript.type="text/javascript";bklScript.id="randibkmlt";bklScript.src="https://irota.github.io/randikepek/randikepek.js";head.appendChild(bklScript);}else{document.querySelector(".photooverlay").style="display:flex !important;";}})();'>Randiképek</a>
+    </div>-->
+    <div class="bklet">
+      <a href='javascript:(function(){console.log("Code injector start");let e,o=document.querySelector("[name = \"szoveged\"]"),s=JSON.parse(sessionStorage.getItem("letter")),t=document.createElement("style");t.type="text/css",t.textContent="[restore] {  border: 1px solid;  background: var(--green);  color: white;}[restore][disabled]{    cursor: default;    background: lightgray;}[restore]:hover{    color: white;}[restore]:not([disabled]):hover{    background: green;}#before-send{    display: flex;   justify-content: space-between;}",document.body.appendChild(t),e=document.createElement("div"),e.className="btn",e.setAttribute("disabled",""),e.setAttribute("restore",""),e.textContent="Visszaállít",document.querySelector("#before-send input").insertAdjacentElement("afterend",e),s&&(e.removeAttribute("disabled"),e.addEventListener("click",e=>{var t,r;t=o,r=s,t.value=r,console.log("Levél szövege visszaállítva")})),document.querySelector("#messsend").addEventListener("click",e=>{var t;s=o.value,(t=s)&&""!==t&&sessionStorage.setItem("letter",JSON.stringify(t)),console.log("Levél szövege elmentve")})})()'>Üzenet mentése</a>
     </div>
     <div><sup>Húzd a fenti linket a könyvjelzők közé</sup></div>
   </div>
